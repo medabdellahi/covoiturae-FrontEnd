@@ -9,9 +9,12 @@ import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationService } from 'src/services/Authentication.service';
+import { HomeComponent } from './home/home.component';
 const appRoutes:Routes=[
   {path:"login",component:LoginComponent},
   { path: "registration", component: RegistrationComponent},
+  { path: "home", component: HomeComponent},
+
   { path: "", redirectTo: "login",pathMatch:"full" }
 
 
@@ -21,6 +24,7 @@ const appRoutes:Routes=[
     AppComponent,
     LoginComponent,
     RegistrationComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
