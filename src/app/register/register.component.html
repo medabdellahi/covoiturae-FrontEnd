@@ -1,12 +1,12 @@
 <div class="container">
   <div class="col-md-6 col-md_offset-3">
     <div class="alert alert-danger" *ngIf="mode==1">
-      <strong>Bad credentials...</strong>
+      <strong>ERROR {{ErrorMsg}}</strong>
     </div>
     <div class="panel panel-primary">
-      <div class="panel-heading">Authentification</div>
+      <div class="panel-heading">Registration</div>
       <div class="panel-body">
-        <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+        <form #f="ngForm" (ngSubmit)="onRegister(f.value)">
           <div class="form-group">
             <label class="control-label">Nom: </label>
             <input ngModel="" class="form-control" type="text" name="username" />
@@ -15,8 +15,11 @@
             <label class="control-label">Mot de pass: </label>
             <input ngModel="" class="form-control" type="password" name="password" />
           </div>
-          <button type="submit" class="btn btn-danger ">Login</button>
-          <button  routerLink="/register" class="btn btn-success ">Register</button>
+          <div class="form-group">
+            <label class="control-label">Confirmer le mot de pass: </label>
+            <input ngModel="" class="form-control" type="password" name="coPassword" />
+          </div>
+          <button type="submit" class="btn btn-success ">Register</button>
 
         </form>
       </div>

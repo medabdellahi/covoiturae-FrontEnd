@@ -24,4 +24,9 @@ logout(){
     this.jwtToken=null;
     localStorage.removeItem('jwtToken');
 }
+
+register(data){
+    return this.http.post(this.host+"/register",data,{observe:'response'});
+
+}
 }  
